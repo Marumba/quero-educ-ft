@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { jsx } from '@emotion/core';
 
+import Loader from '@components/loader';
 import useLocalStorage from '@components/storage';
 import DefaultTheme from '@themes/default';
 import Container from '@layout/container';
@@ -32,19 +33,21 @@ function FavoriteScholarships({ favorites }) {
 	}, [favorites, semester]);
 
 	return (
-		<DefaultTheme>
-			<section>
-				<Container>
-					<h1 css={Style.PageTitle}>
-						<strong>Bolsas favoritas</strong>
-					</h1>
-					<h2 css={Style.PageSubTitle}>Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.</h2>
-					<SemesterFilter onSetSemester={newSemester => setSemester(newSemester)} />
-					<Favorites favItems={favoriteItems} removeItem={id => dispatch({ type: favoritesTypes.remove, payload: favorites.result.filter(item => item.id !== id) })} />
-				</Container>
-			</section>
-			<ScholarshipModal />
-		</DefaultTheme>
+		<Suspense fallback={<Loader />}>
+			<DefaultTheme>
+				<section>
+					<Container>
+						<h1 css={Style.PageTitle}>
+							<strong>Bolsas favoritas</strong>
+						</h1>
+						<h2 css={Style.PageSubTitle}>Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.</h2>
+						<SemesterFilter onSetSemester={newSemester => setSemester(newSemester)} />
+						<Favorites favItems={favoriteItems} removeItem={id => dispatch({ type: favoritesTypes.remove, payload: favorites.result.filter(item => item.id !== id) })} />
+					</Container>
+				</section>
+				<ScholarshipModal />
+			</DefaultTheme>
+		</Suspense>
 	);
 }
 

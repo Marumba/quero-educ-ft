@@ -4,10 +4,8 @@ import { useRef, useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { compose } from 'redux';
 import { jsx } from '@emotion/core';
-import { uid } from 'react-uid';
 
 import { modalTypes } from '@ducks/modal';
-import Button from '@layout/button/button';
 
 import * as Style from './withModal.style';
 
