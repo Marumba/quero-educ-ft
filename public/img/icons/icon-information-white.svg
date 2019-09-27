@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42 42">
+  <defs>
+    <clipPath id="clip-path">
+      <path d="M21,11.7097a2.0645,2.0645,0,1,0,2.06451,2.0645A2.0645,2.0645,0,0,0,21,11.7097ZM18.6774,27.1935h.7742V19.4516h-.7742a.77424.77424,0,0,1-.7742-.7742v-.5161a.77424.77424,0,0,1,.7742-.7742h3.0968a.77424.77424,0,0,1,.7742.7742v9.0322h.7742a.77431.77431,0,0,1,.7742.7742v.5162a.7743.7743,0,0,1-.7742.7742H18.6774a.7743.7743,0,0,1-.7742-.7742v-.5162A.77431.77431,0,0,1,18.6774,27.1935ZM21,5A16,16,0,1,0,37,21,16.00243,16.00243,0,0,0,21,5Zm0,2.0645A13.9355,13.9355,0,1,1,7.06451,21,13.93711,13.93711,0,0,1,21,7.0645Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect x="5" y="5" width="32" height="32" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect width="42" height="42" fill="none"/>
+    </clipPath>
+  </defs>
+  <title>icon-information-white</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g clip-path="url(#clip-path)">
+        <g clip-path="url(#clip-path-2)">
+          <g style="isolation: isolate">
+            <g clip-path="url(#clip-path-3)">
+              <g clip-path="url(#clip-path-2)">
+                <rect width="42" height="42"/>
+              </g>
+              <g clip-path="url(#clip-path-2)">
+                <g clip-path="url(#clip-path-2)">
+                  <rect width="42" height="42" fill="#fff"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

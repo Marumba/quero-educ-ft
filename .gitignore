@@ -1,0 +1,12 @@
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Package control specific files
+node_modules
+package-lock.json
+
+# layout files
+/#/

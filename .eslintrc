@@ -1,0 +1,66 @@
+{
+	"parser": "babel-eslint",
+	"extends": "airbnb",
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"jest/globals": true
+	},
+	"globals": {
+		"config": "readonly",
+		"mount": "readonly",
+		"shalllow": "readonly",
+		"render": "readonly"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true,
+			"legacyDecorators": true
+		},
+		"sourceType": "module"
+	},
+	"plugins": [
+		"import",
+		"jsx-a11y",
+		"react",
+		"jest",
+		"enzyme"
+	],
+	"rules": {
+		"arrow-body-style": 0,
+		"arrow-parens": [1, "as-needed"],
+		"comma-dangle": ["error", "never"],
+		"no-underscore-dangle" : 0,
+		"object-curly-newline": ["error", { "consistent": true }],
+		"import/newline-after-import": 0,
+		"import/no-dynamic-require": 0,
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+		"import/no-unresolved": 0,
+		"import/no-useless-path-segments": 0,
+		"import/prefer-default-export": 0,
+		"indent": [ 2, "tab", {"SwitchCase": 1} ],
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/prefer-to-have-length": "warn",
+		"jest/valid-expect": "error",
+		"jsx-a11y/click-events-have-key-events": 0,
+		"jsx-a11y/no-static-element-interactions": 0,
+		"linebreak-style": [ 2, "windows" ],
+		"max-len": [ 2, 180 ],
+		"no-param-reassign": ["error", { "props": false }],
+		"no-plusplus": 0,
+		"no-tabs": 0,
+		"prefer-template": 0,
+		"react/destructuring-assignment": [1, "always", { "ignoreClassFields": true }],
+		"react/jsx-indent": [ 2, "tab" ],
+		"react/jsx-indent-props": [ 2, "tab" ],
+		"react/jsx-one-expression-per-line": [1, { "allow": "literal"}],
+		"react/jsx-fragments": 0,
+		"react/no-did-update-set-state": 0,
+		"react/prefer-stateless-function": 0,
+		"react/prop-types": 0
+	}
+}
