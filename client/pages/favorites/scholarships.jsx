@@ -33,8 +33,8 @@ function FavoriteScholarships({ favorites }) {
 	}, [favorites, semester]);
 
 	return (
-		<Suspense fallback={<Loader />}>
-			<DefaultTheme>
+		<DefaultTheme>
+			<Suspense fallback={<Loader />}>
 				<section>
 					<Container>
 						<h1 css={Style.PageTitle}>
@@ -42,12 +42,15 @@ function FavoriteScholarships({ favorites }) {
 						</h1>
 						<h2 css={Style.PageSubTitle}>Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.</h2>
 						<SemesterFilter onSetSemester={newSemester => setSemester(newSemester)} />
-						<Favorites favItems={favoriteItems} removeItem={id => dispatch({ type: favoritesTypes.remove, payload: favorites.result.filter(item => item.id !== id) })} />
+						<Favorites
+							favItems={favoriteItems}
+							removeItem={id => dispatch({ type: favoritesTypes.remove, payload: favorites.result.filter(item => item.id !== id) })}
+						/>
 					</Container>
 				</section>
 				<ScholarshipModal />
-			</DefaultTheme>
-		</Suspense>
+			</Suspense>
+		</DefaultTheme>
 	);
 }
 
