@@ -24,7 +24,7 @@ function FavoriteScholarships({ favorites }) {
 
 	useEffect(() => {
 		dispatch(fetchScholarship());
-		if (localStorage && localStorage.length) dispatch({ type: favoritesTypes.save, payload: localStorage });
+		if (localStorage && localStorage.length && !favoriteItems) dispatch({ type: favoritesTypes.local, payload: localStorage });
 	}, []);
 
 	useEffect(() => {

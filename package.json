@@ -5,8 +5,8 @@
     "main": "webpack.config.js",
     "scripts": {
         "dev": "webpack-dev-server --mode=development --env.NODE_ENV=development --display-error-details --progress",
-		"prod": "webpack --mode=production --env.NODE_ENV=production -p --progress",
-		"build": "webpack --mode=production --env.NODE_ENV=production -p",
+        "prod": "webpack --mode=production --env.NODE_ENV=production -p --progress",
+        "build": "webpack --mode=production --env.NODE_ENV=production -p",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage --colors"
