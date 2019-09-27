@@ -18,17 +18,17 @@ import * as Style from './scholarships.style';
 
 function FavoriteScholarships({ favorites }) {
 	const dispatch = useDispatch();
-	const [localName, setLocalName] = useLocalStorage(STORE_NAME);
+	const [localStorage, setLocalStorage] = useLocalStorage(STORE_NAME);
 	const [favoriteItems, setFavoritesItems] = useState();
 	const [semester, setSemester] = useState();
 
 	useEffect(() => {
 		dispatch(fetchScholarship());
-		dispatch({ type: favoritesTypes.save, payload: localName });
+		if (localStorage && localStorage.length) dispatch({ type: favoritesTypes.save, payload: localStorage });
 	}, []);
 
 	useEffect(() => {
-		if (favorites.added || favorites.removed) setLocalName(favorites.result);
+		if (favorites.added || favorites.removed) setLocalStorage(favorites.result);
 		setFavoritesItems(semester ? favorites.result.filter(item => item.enrollment_semester === semester) : favorites.result);
 	}, [favorites, semester]);
 

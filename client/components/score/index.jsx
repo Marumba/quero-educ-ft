@@ -8,7 +8,7 @@ function Score({ points, item }) {
 	const score = points.toString();
 
 	const stars = [...new Array(5)].map((data, index) => {
-		return <span key={'star-' + item[index]} css={Style.ScoreStar(index < score[0] ? 'full' : index == score[0] && score[2] ? 'half' : '')} />;
+		return <span css={Style.ScoreStar(index < score[0] ? 'full' : index == score[0] && score[2] ? 'half' : '')} />;
 	});
 	return <div css={Style.Score}>{stars}</div>;
 }

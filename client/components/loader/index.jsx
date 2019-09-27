@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import {Fragment} from 'react'
+import { Fragment } from 'react';
 
 import * as Style from './style';
 
@@ -9,7 +9,11 @@ function Loader() {
 		<Fragment>
 			<div css={Style.LoaderOverlay} />
 			<div css={Style.Loader}>
-				<div css={css`display: block;`}>
+				<div
+					css={css`
+						display: block;
+					`}
+				>
 					<div className={Style.LoaderSpin}>&nbsp;</div>
 				</div>
 			</div>
