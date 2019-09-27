@@ -12,5 +12,5 @@
 * * * /bolsas-favoritas (o teste)
 
 ## Online
-[localhost:8080](https://quero-educ-ft.rodrigogragnoli.now.sh/)
+[https://quero-educ-ft.rodrigogragnoli.now.sh/](https://quero-educ-ft.rodrigogragnoli.now.sh/)
 
