@@ -44,6 +44,7 @@ module.exports = env => {
 		resolve: {
 			extensions: ['.js', '.jsx'],
 			alias: {
+				'@images': path.resolve(__dirname, 'public/img'),
 				'@components': path.resolve(__dirname, 'client/components'),
 				'@themes': path.resolve(__dirname, 'client/themes'),
 				'@layout': path.resolve(__dirname, 'client/components/layout'),

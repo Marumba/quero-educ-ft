@@ -1,31 +1,31 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { Fragment, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import Container from '@layout/container';
 import { useMediaQuery } from '@components/mediaQuery';
 
 import * as Style from './style';
 
-function Menu() {
+function Menu({ match }) {
 	const [showMenu, setShowMenu] = useState(false);
-	const [activePage, setActivePage] = useState();
 	const mobile = useMediaQuery() === 'mobile';
 
-	const isActive = url => match => {
-		if (match && match.isExact) setActivePage(url);
-		return match;
+	const home = '/minha-conta';
+
+	const links = {
+		favourites: `${home}/bolsas-favoritas`,
+		home,
+		registration: `${home}/pre-matriculas`
 	};
-	const checkActivePage = page => activePage === page;
-	const preFix = '/minha-conta';
 
 	const commonLinks = [
-		<li key="menu-item-1" css={Style.NavListItem(checkActivePage(preFix + '/pre-matriculas'))}>
-			<NavLink isActive={isActive(preFix + '/pre-matriculas')} to="/minha-conta/pre-matriculas">Pré-matrículas</NavLink>
+		<li key="menu-item-1" css={Style.NavListItem(match.path === links.registration)}>
+			<NavLink exact to={`${home}/pre-matriculas`}>Pré-matrículas</NavLink>
 		</li>,
-		<li key="menu-item-2" css={Style.NavListItem(checkActivePage(preFix + '/bolsas-favoritas'))}>
-			<NavLink isActive={isActive(preFix + '/bolsas-favoritas')} to="/minha-conta/bolsas-favoritas">Bolsas favoritas</NavLink>
+		<li key="menu-item-2" css={Style.NavListItem(match.path === links.favourites)}>
+			<NavLink exact to={`${home}/bolsas-favoritas`}>Bolsas favoritas</NavLink>
 		</li>
 	];
 
@@ -33,11 +33,11 @@ function Menu() {
 		<nav css={Style.Nav}>
 			<Container customStyle={Style.NavContainer}>
 				<ul css={Style.NavList}>
-					<li css={Style.NavListItem(checkActivePage('/minha-conta'))}>
-						<NavLink isActive={isActive('/minha-conta')} to="/minha-conta">Minha conta</NavLink>
+					<li css={Style.NavListItem(match.path === home)}>
+						<NavLink exact to={home}>Minha conta</NavLink>
 					</li>
 					{mobile ? (
-						<li css={[Style.NavListItem(), Style.NavListItemMenu(showMenu)]}>
+						<li css={[Style.NavListItem, Style.NavListItemMenu(showMenu)]}>
 							<button type="button" onClick={() => setShowMenu(!showMenu)}>
 								Menu
 							</button>
@@ -52,4 +52,4 @@ function Menu() {
 	);
 }
 
-export default Menu;
+export default withRouter(Menu);
